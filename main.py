@@ -5,6 +5,7 @@ import json
 import numpy as np
 import seaborn as sn
 import sys
+import random
 from alive_progress import alive_bar
 
 '''
@@ -51,11 +52,15 @@ def isValid(point):
         return False
     return True
 
-def calculateAccuracy(fencers,data,scalars):
+def calculateAccuracy(fencers,data,scalars, skip_marked = False, only_marked = False):
     num_correct = 0
     num_total = 0
     for bout in data['bouts']:
-        model = boutModel(fencers[bout['leftName']]['data_array'],fencers[bout['rightName']]['data_array'],scalars)
+        if skip_marked and 'marked' in bout:
+            continue
+        if only_marked and not 'marked' in bout:
+            continue
+        model = boutModel(fencers[bout['leftName']]['data_array'],fencers[bout['rightName']]['data_array'],scalars,useRandom = useRandom)
         for point in bout['points']:
             if not isValid(point):
                 continue
@@ -85,6 +90,9 @@ with open('data.json','r') as f:
 fencers = {}
 print("Total number of bouts: ", len(data['bouts']))
 print("Total number of points: ", sum(len(bout['points']) for bout in data['bouts']))
+marked_bouts = random.sample(data['bouts'],3)
+for bout in marked_bouts:
+    bout['marked'] = True
 for bout in data['bouts']:
     leftFencer = bout['leftName']
     rightFencer = bout['rightName']
@@ -173,27 +181,33 @@ type_count = {
     'll': 0  
 }
 best_acc = 0
-best_scalars = [0.4, 1.2, 0.3, 0.5, .1]
+best_scalars = [0.2, 0.1, 0.1, 0.9, 3.9]
 
 if not skip_calcs:
     with alive_bar((19**4)) as bar:
-        for s0 in np.arange(.1,2,.1):
-            for s1 in np.arange(.1,2,.1):
-               for s2 in np.arange(.1,2,.1):
-                    for s3 in np.arange(.1,2,.1):
-                        for s4 in np.arange(5,150,1):
-                            scalars = [s0,s1,s2,s3,5]
-                            acc = calculateAccuracy(fencers,data,scalars)
+#        for s0 in np.arange(.1,2,.1):
+#            for s1 in np.arange(.1,2,.1):
+#               for s2 in np.arange(.1,2,.1):
+#                    for s3 in np.arange(.1,2,.1):
+                        for s4 in np.arange(.1,20,.1):
+                            scalars = [0.2, 0.1, 0.1, 0.9,s4]
+                            acc = calculateAccuracy(fencers,data,scalars,skip_marked=True)
+                            if useRandom:
+                                acc = 0
+                                for i in range(100):
+                                    acc +=.01* calculateAccuracy(fencers,data,scalars,skip_marked=True)
+
                             bar()
                             if acc > best_acc:
                                 best_acc = acc
                                 best_scalars = scalars
+print("Test Set Accuracy: ", calculateAccuracy(fencers,data,best_scalars,only_marked=True))
 
 #print("Best accuracy: ", best_acc)
 row_splits = []
 generalized_splits = []
 for bout in data['bouts']:
-    model = boutModel(fencers[bout['leftName']]['data_array'],fencers[bout['rightName']]['data_array'],best_scalars)
+    model = boutModel(fencers[bout['leftName']]['data_array'],fencers[bout['rightName']]['data_array'],best_scalars, useRandom = useRandom)
     for point in bout['points']:
         if not isValid(point):
             continue
@@ -415,9 +429,15 @@ print("**************** Action pair 2nd win analysis ****************")
 for a in ['q', 'd', 'l']:
     print("------ ", a, " ------")
     for p in ['q', 'd', 'l']:
-                print(a+p, ": ", (action_pair_loss_win[a+p]+action_pair_win_win[a+p])/(action_pair_win_win[a+'q']+action_pair_win_win[a+'d']+action_pair_win_win[a+'l']+action_pair_win_loss[a+'q']+action_pair_win_loss[a+'d']+action_pair_win_loss[a+'l']))
+                print(a+p, ": ", (action_pair_loss_win[a+p]+action_pair_win_win[a+p])/(action_pair_win_win[a+p]+action_pair_win_loss[a+p]+action_pair_loss_loss[a+p]+action_pair_loss_win[a+p]))
     #print(ap, ": ", (action_pair_loss_win[ap] + action_pair_win_win[ap] ) / action_pairs[ap])
-
+aps = ['qq', 'qd', 'ql', 'dq', 'dd', 'dl', 'lq', 'ld', 'll']
+X = [action_pairs[ap] for ap in aps]
+Y = [(action_pair_loss_win[ap]+action_pair_win_win[ap])/(action_pair_win_win[ap]+action_pair_win_loss[ap]+action_pair_loss_loss[ap]+action_pair_loss_win[ap]) for ap in aps]
+plt.clf()
+plt.scatter(X,Y)
+plt.plot(np.unique(X), np.poly1d(np.polyfit(X, Y, 1))(np.unique(X)))
+plt.savefig('graphs/Action Pair Success Rate by Frequency.png')
 # P(win_current | last_action, current_action && last_action => win )
 print("**************** Action pair win - win analysis ****************")
 for a in ['q', 'd', 'l']:
