@@ -20,14 +20,21 @@ def recordBout():
             break
     return bout_data
 
+data = {'bouts':[]}
+from pathlib import Path
 
-with open("data.json", "w") as f:
-    data = {'bouts':[]}
-    while 1:
-        bout = recordBout()
-        data['bouts'].append(bout)
-        cont = input("new bout? (y/n): ")
+path = Path("data.json")
+if path.is_file():
+    with open("data.json", "r") as f:
+        data = json.load(f)
+
+    
+while 1:
+    bout = recordBout()
+    data['bouts'].append(bout)
+    cont = input("new bout? (y/n): ")
+    with open("data.json", "w") as f:
         json.dump(data, f,indent = 2)
-        if cont == 'n':
-            break  
-        
+    if cont == 'n':
+        break  
+    

@@ -1,0 +1,1114 @@
+{
+  "bouts": [
+    {
+      "points": [
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "q",
+          "leftAction": "d",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "l"
+        }
+      ],
+      "leftName": "egorian",
+      "rightName": "kharlan"
+    },
+    {
+      "points": [
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "c",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "q",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        }
+      ],
+      "leftName": "kim",
+      "rightName": "pascu"
+    },
+    {
+      "points": [
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "c",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "c",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "h",
+          "rightAction": "h"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "l"
+        }
+      ],
+      "leftName": "rifkiss",
+      "rightName": "berder"
+    },
+    {
+      "points": [
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "c",
+          "leftAction": "d",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "c",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "r"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "l"
+        }
+      ],
+      "leftName": "velikaya",
+      "rightName": "brunet"
+    },
+    {
+      "points": [
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "c",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "s",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "d",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "c",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "c",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "l"
+        }
+      ],
+      "leftName": "errigo",
+      "rightName": "kharlan"
+    },
+    {
+      "points": [
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "c",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        }
+      ],
+      "leftName": "egorian",
+      "rightName": "fukushima"
+    },
+    {
+      "points": [
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "c",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "c",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "c",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "r",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "c",
+          "leftAction": "q",
+          "rightAction": "d"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "q",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "d",
+          "leftAction": "d",
+          "rightAction": "q"
+        },
+        {
+          "score": "l",
+          "type": "o",
+          "leftAction": "l",
+          "rightAction": "l"
+        },
+        {
+          "score": "d",
+          "type": "y",
+          "leftAction": "y",
+          "rightAction": "y"
+        }
+      ],
+      "leftName": "kim",
+      "rightName": "ciaraglia"
+    }
+  ]
+}
