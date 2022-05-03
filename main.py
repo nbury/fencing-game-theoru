@@ -4,11 +4,12 @@ import argparse
 import json
 import numpy as np
 import seaborn as sn
+import sys
 from alive_progress import alive_bar
 
 '''
 Data notes:
-Most data is from the Women's world championship in 2018, some bouts are from other tournaments, but it is all from 2018
+Most data is from the Women's world championship in 2018, some bouts are from other tournaments, but using the same fencers around the same time
 Data recorded:
 names of each fencer
 for each point:
@@ -66,15 +67,17 @@ def calculateAccuracy(fencers,data,scalars):
             actualWinner = point['score']
             if predictedWinner == actualWinner:
                 num_correct+=1
-            #print("[",leftAction,',',rightAction,'] :',predictedWinner,'/',actualWinner)
-    #print("**************** Overall Accuracy ",scalars, " ****************")
-    #print(num_correct /num_total)
     return num_correct/num_total
 
+useRandom = False
+skip_calcs = True
+if len(sys.argv) > 1:
+    for arg in sys.argv[1:]:
+        if arg == '-r':
+            useRandom = True
+        if arg == '-s':
+            skip_calcs = False
 
-# parser = argparse.ArgumentParser(description='Process some integers.')
-# parser.add_argument("scalars", preset_scalars, required=True)
-# parser.parse_args()
 
 data = {}
 with open('data.json','r') as f:
@@ -170,16 +173,16 @@ type_count = {
     'll': 0  
 }
 best_acc = 0
-best_scalars = [0.4, 1.2, 0.3, 0.1,10]
-skip = False
-if not skip:
-    with alive_bar(15*(19**4)) as bar:
+best_scalars = [0.4, 1.2, 0.3, 0.5, .1]
+
+if not skip_calcs:
+    with alive_bar((19**4)) as bar:
         for s0 in np.arange(.1,2,.1):
             for s1 in np.arange(.1,2,.1):
-                for s2 in np.arange(.1,2,.1):
+               for s2 in np.arange(.1,2,.1):
                     for s3 in np.arange(.1,2,.1):
-                        for s4 in np.arange(5,20,1):
-                            scalars = [s0,s1,s2,s3,s4]
+                        for s4 in np.arange(5,150,1):
+                            scalars = [s0,s1,s2,s3,5]
                             acc = calculateAccuracy(fencers,data,scalars)
                             bar()
                             if acc > best_acc:
@@ -187,7 +190,8 @@ if not skip:
                                 best_scalars = scalars
 
 #print("Best accuracy: ", best_acc)
-
+row_splits = []
+generalized_splits = []
 for bout in data['bouts']:
     model = boutModel(fencers[bout['leftName']]['data_array'],fencers[bout['rightName']]['data_array'],best_scalars)
     for point in bout['points']:
@@ -221,6 +225,18 @@ for bout in data['bouts']:
             elif point['score'] == 'r':
                 fencers[bout['rightName']]['total points predicted correctly'] += 1
         #print("[",leftAction,',',rightAction,'] :',predictedWinner,'/',actualWinner)
+        model_gen_splits, model_row_splits = model.get_splits()
+        generalized_splits.extend(model_gen_splits)
+        row_splits.extend(model_row_splits)
+plt.clf()
+generalized_splits = [x for x in generalized_splits if x > 0]
+row_splits = [x for x in row_splits if x > 0]
+plt.hist(generalized_splits, bins = 100)
+plt.savefig("graphs/Generalized Splits.png")
+plt.clf()
+
+plt.hist(row_splits, bins = 100)
+plt.savefig("graphs/RoW Splits.png")
 print("**************** Best Accuracy ****************")
 print(best_scalars)
 print(num_correct/num_total)
@@ -228,11 +244,12 @@ print("**************** Type Accuracy ****************")
 for pair_type in type_count:
     print(pair_type, ": ", type_correct[pair_type]/type_count[pair_type], "  (", type_count[pair_type],")")
 print("**************** Accuracy by Fencer **************** ")
+plt.clf()
 Y = [fencers[fencer]['total points predicted correctly']/fencers[fencer]['total points won'] for fencer in fencers]
-X = [fencers[fencer]['total points won'] for fencer in fencers]
+X = [fencers[fencer]['total points'] for fencer in fencers]
 plt.scatter(X,Y)
 plt.plot(np.unique(X), np.poly1d(np.polyfit(X, Y, 5))(np.unique(X)))
-plt.savefig('accuracy_by_fencer.png')
+plt.savefig('graphs/Accuracy by Fencer.png')
 plt.clf()
 
 
@@ -240,7 +257,7 @@ X = [covariance([fencers[fencer]['data_array'][i]  for fencer in fencers],Y) for
 labels = ['Offensive', 'Defensive', 'Speed', 'Overall']
 fig = plt.figure()
 plt.bar(labels,X)
-plt.savefig('characteristic_covariance.png')
+plt.savefig('graphs/Characteristic Covariance.png')
 
 plt.clf()
 Y = [type_correct[pair_type]/type_count[pair_type] if pair_type !='dd' else 0 for pair_type in type_count]
@@ -249,7 +266,7 @@ X.remove(0)
 Y.remove(0)
 plt.scatter(X,Y)
 plt.plot(np.unique(X), np.poly1d(np.polyfit(X, Y, 1))(np.unique(X)))
-plt.savefig('type_accuracy_by_num_type.png')
+plt.savefig('graphs/Type Accuracy by Number of Type.png')
 
 for fencer in fencers:
     print(fencer, ": ", fencers[fencer]['total points predicted correctly']/fencers[fencer]['total points won'], "  (", fencers[fencer]['total points won'],")")
@@ -262,8 +279,6 @@ for bout in data['bouts']:
     last_win = ''
     last_win_action = ''
     for point in bout['points']:
-        
-
         if last_win == 'l':
             if point['leftAction'] == last_win_action:
                 num_same_action+=1
@@ -370,19 +385,21 @@ for bout in data['bouts']:
             action_pairs[last_action_right+point['rightAction']]+=1
 
         if point['score'] == 'l':
-            if last_win == 'l':
+            if last_win == 'r':
                 action_pair_loss_win[last_action_left+point['leftAction']]+=1
                 action_pair_win_loss[last_action_right+point['rightAction']]+=1
-            elif last_win == 'r':
+            elif last_win == 'l':
                 action_pair_win_win[last_action_left+point['leftAction']]+=1
                 action_pair_loss_loss[last_action_right+point['rightAction']]+=1
 
         elif point['score'] == 'r':
             if last_win == 'r':
                 action_pair_win_win[last_action_right+point['rightAction']]+=1
+                action_pair_loss_loss[last_action_left+point['leftAction']]+=1
                 
             elif last_win == 'l':
                 action_pair_loss_win[last_action_right+point['rightAction']]+=1
+                action_pair_win_loss[last_action_left+point['leftAction']]+=1
         winning_action = point['leftAction'] if point['score'] == 'l' else point['rightAction']
         last_winning_action = winning_action
         last_action_left = point['leftAction']
@@ -406,14 +423,14 @@ print("**************** Action pair win - win analysis ****************")
 for a in ['q', 'd', 'l']:
     print("------ ", a, " ------")
     for p in ['q', 'd', 'l']:
-        print(a+p, ": ", action_pair_win_win[a+p]/(action_pair_win_win[a+'q']+action_pair_win_win[a+'d']+action_pair_win_win[a+'l']+action_pair_win_loss[a+'q']+action_pair_win_loss[a+'d']+action_pair_win_loss[a+'l']))
+        print(a+p, ": ", action_pair_win_win[a+p]/(action_pair_win_win[a+p]+action_pair_win_loss[a+p]))
 
 # P(win_current | last_action, current_action && last_action => loss )
 print("**************** Action pair loss - win analysis ****************")
 for a in ['q', 'd', 'l']:
     print("------ ", a, " ------")
     for p in ['q', 'd', 'l']:
-                print(a+p, ": ", action_pair_loss_win[a+p]/(action_pair_win_win[a+'q']+action_pair_win_win[a+'d']+action_pair_win_win[a+'l']+action_pair_win_loss[a+'q']+action_pair_win_loss[a+'d']+action_pair_win_loss[a+'l']))
+                print(a+p, ": ", action_pair_loss_win[a+p]/(action_pair_loss_loss[a+p]+action_pair_loss_win[a+p]))
 
 
 

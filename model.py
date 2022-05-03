@@ -1,13 +1,17 @@
 import random
 import math
+import matplotlib.pyplot as plt
 
 class boutModel():
     
-    def __init__(self, left,right, scalars):
+    def __init__(self, left,right, scalars,useRandom = False):
         # O,D,S,A    
         self.left = left
         self.right = right
         self.scalars = scalars
+        self.useRandom = useRandom
+        self.generalized_splits = []
+        self.row_splits = []
 
         
     def predictWinner(self, leftAction, rightAction):
@@ -38,23 +42,44 @@ class boutModel():
     def rightOfWay(self):
         pL = self.left[2] * self.scalars[2]
         pR = self.right[2] * self.scalars[2]
-        split = math.log(self.scalars[4]*(pL/(pL+pR))+1)
-        if split > random.random():
+        split = .5-pL/(pL+pR)
+        
+        if split < 0:
+            split = -1*math.log(-1*self.scalars[4]*split+1)+.5
+        else:
+            split = math.log(self.scalars[4]*split+1)+.5
+        self.row_splits.append(split)
+        threshold = random.random() if self.useRandom else .5
+        if split > threshold:
             return 'l'
         return 'r'
     def generalized(self,rightOfWay):
         
         if rightOfWay == 'l':
             pL = ( (self.left[0]*self.scalars[0]  + self.left[2]*self.scalars[2]) /2 ) + self.left[3]*self.scalars[3]
-            pR = self.right[1]*self.scalars[1] + self.right[3]*self.scalars[3]
-            split = math.log(self.scalars[4]*(pL/(pL+pR))+1)
-            if split > random.random():
+            pR = self.right[1]*self.scalars[1] * self.right[3]*self.scalars[3]
+            split = .5-pL/(pL+pR)
+            if split < 0:
+                split = -1*math.log(-1*self.scalars[4]*split+1)+.5
+            else:
+                split = math.log(self.scalars[4]*split+1)+.5
+            self.generalized_splits.append(split)
+            threshold = random.random() if self.useRandom else .5
+            if split > threshold:
                 return 'l'
             return 'r'
         else:
-            pL = ( (self.left[1]*self.scalars[1]  + self.left[2]*self.scalars[2]) /2 )+ self.left[3]*self.scalars[3]
-            pR = self.right[0]*self.scalars[0] + self.right[3]*self.scalars[3]
-            split = math.log(self.scalars[4]*(pL/(pL+pR))+1)
-            if split > random.random():
+            pL = ( (self.right[1]*self.scalars[1]  + self.right[2]*self.scalars[2]) /2 )+ self.right[3]*self.scalars[3]
+            pR = self.left[0]*self.scalars[0] + self.left[3]*self.scalars[3]
+            split = .5-pL/(pL+pR)
+            if split < 0:
+                split = -1*math.log(-1*self.scalars[4]*split+1)+.5
+            else:
+                split = math.log(self.scalars[4]*split+1)+.5
+            self.generalized_splits.append(split)
+            threshold = random.random() if self.useRandom else .5
+            if split > threshold:
                 return 'l'
             return 'r'
+    def get_splits(self):
+        return self.generalized_splits, self.row_splits
